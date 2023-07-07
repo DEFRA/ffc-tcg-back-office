@@ -1,0 +1,8 @@
+{{- include "ffc-helm-library.deployment" (list . "ffc-tcg-back-office.deployment") -}}
+{{- define "ffc-tcg-back-office.deployment" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - {{ include "ffc-helm-library.container" (list . "ffc-tcg-back-office.container") }}
+{{- end -}}
